@@ -1,6 +1,6 @@
 
 file_path = r"C:\Lukas\Python\Domácí úkoly\HW-8\HW-8-PY-2024\random_nouns.txt"
-file_path2 = r"C:\Lukas\Python\Domácí úkoly\HW-8\HW-8-PY-2024\copy_nouns.txt"
+file_path2 = r"C:\Lukas\Python\Domácí úkoly\HW-8\HW-8-PY-2024\rev_nouns.txt"
 
 #Task 1
 def task1():
@@ -28,4 +28,18 @@ def task2():
     with open(file_path2, "w") as f:
         f.writelines(word for word in words)
 
-task2()
+#Task 3
+def task3():
+    words = []
+
+    with open(file_path, "r") as f:
+        words = f.readlines()
+    
+    words.reverse()
+    
+    with open(file_path2, "w") as f:
+       f.writelines(word for word in words)
+    print(words)
+    print("-" * 50)
+
+task3()
