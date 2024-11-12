@@ -42,4 +42,17 @@ def task3():
     print(words)
     print("-" * 50)
 
-task3()
+#Task 4
+
+def task4():
+    words = []
+    stars = "*" * 12
+
+    with open(file_path, "r") as f:
+        words = f.readlines()
+    
+
+
+    print(stars)
+
+task4()
