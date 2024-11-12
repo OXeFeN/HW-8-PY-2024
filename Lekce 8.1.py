@@ -1,10 +1,17 @@
 
 file_path = r"C:\Lukas\Python\Domácí úkoly\HW-8\HW-8-PY-2024\random_nouns.txt"
-file_path2 = r"C:\Lukas\Python\Domácí úkoly\HW-8\HW-8-PY-2024\filter_nouns.txt"
+file_path2 = r"C:\Lukas\Python\Domácí úkoly\HW-8\HW-8-PY-2024\replace_nouns.txt"
 
+def task0():
+    with open(file_path, "r") as source:
+        words = list((source.read().split()))
+
+    with open(file_path, "w") as source:
+        source.writelines(word + "\n" for word in words)
+    
 #Task 1
 def task1():
-    with open(file_path, "r") as source, open(file_path, "w") as new:
+    with open(file_path, "r") as source, open(file_path2, "w") as new:
         text = source.read()
 
         words = []
@@ -55,4 +62,10 @@ def task5():
             if word.startswith(user[0]):
                 new.writelines(word + "\n")
 
-task5()
+#Task 6
+def task6():
+    user = str(input("Set a character for replace: ").strip().lower())
+    with open(file_path, "r") as source, open(file_path2, "w") as new:
+        words = (source.read()).replace((user[0]), "*")
+        words.split()
+        new.writelines(words + "\n")
